@@ -1,100 +1,329 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+@extends('layouts.app')
+@section('navegacion')
+    <li class="active">
+        <a href="/">Home</a>
+    </li>
+    <li>
+        <a href="/about">About</a>
+    </li>
+    <li>
+        <a href="/recipe">Recipe</a>
+    </li>
+    <li>
+        <a href="/blog">Blog</a>
+    </li>
+    <li>
+        <a href="/contact">Contact Us</a>
+    </li>
+@endsection
+@section('contenido') 
+    <div id="content">
+    <!-- header -->
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="full">
+                        <a class="logo" href="index.html"><img src="images/logo.png" alt="#" /></a>
+                    </div>
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="col-md-9">
+                    <div class="full">
+                        <div class="right_header_info">
+                            <ul>
+                                <li class="dinone">Contact Us : <img style="margin-right: 15px;margin-left: 15px;" src="images/phone_icon.png" alt="#"><a href="#">987-654-3210</a></li>
+                                <li class="dinone"><img style="margin-right: 15px;" src="images/mail_icon.png" alt="#"><a href="#">demo@gmail.com</a></li>
+                                <li class="dinone"><img style="margin-right: 15px;height: 21px;position: relative;top: -2px;" src="images/location_icon.png" alt="#"><a href="#">104 New york , USA</a></li>
+                                <li class="button_user"><a class="button active" href="#">Login</a><a class="button" href="#">Register</a></li>
+                                <li><img style="margin-right: 15px;" src="images/search_icon.png" alt="#"></li>
+                                <li>
+                                    <button type="button" id="sidebarCollapse">
+                                        <img src="images/menu_icon.png" alt="#">
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+    </header>
+    <!-- end header -->
+    <!-- start slider section -->
+    <div class="slider_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="full">
+                        <div id="main_slider" class="carousel vert slide" data-ride="carousel" data-interval="5000">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="slider_cont">
+                                                <h3>Discover Restaurants<br>That deliver near You</h3>
+                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                                                <a class="main_bt_border" href="#">Order Now</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="slider_image full text_align_center">
+                                                <img class="img-responsive" src="images/burger_slide.png" alt="#" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="slider_cont">
+                                                <h3>Discover Restaurants<br>That deliver near You</h3>
+                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                                                <a class="main_bt_border" href="#">Order Now</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7 full text_align_center">
+                                            <div class="slider_image">
+                                                <img class="img-responsive" src="images/burger_slide.png" alt="#" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+                                <i class="fa fa-angle-up"></i>
+                            </a>
+                            <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end slider section -->
+
+    <!-- section -->
+    <section class="resip_section">
+        <div class="container">
+            <div class="row">
+         <div class="col-md-12">
+       <div class="ourheading">
+    <h2>Our Recipes</h2>
+  </div>
+</div>    
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="owl-carousel owl-theme">
+
+                <div class="item">
+                    <div class="product_blog_img">
+                        <img src="images/rs1.png" alt="#" />
+                    </div>
+                    <div class="product_blog_cont">
+                        <h3>Homemade</h3>
+                        <h4><span class="theme_color">$</span>10</h4>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="product_blog_img">
+                        <img src="images/rs2.png" alt="#" />
+                    </div>
+                    <div class="product_blog_cont">
+                        <h3>Noodles</h3>
+                        <h4><span class="theme_color">$</span>20</h4>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="product_blog_img">
+                        <img src="images/rs3.png" alt="#" />
+                    </div>
+                    <div class="product_blog_cont">
+                        <h3>Egg</h3>
+                        <h4><span class="theme_color">$</span>30</h4>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="product_blog_img">
+                        <img src="images/rs4.png" alt="#" />
+                    </div>
+                    <div class="product_blog_cont">
+                        <h3>Sushi Dizzy</h3>
+                        <h4><span class="theme_color">$</span>40</h4>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="product_blog_img">
+                        <img src="images/rs5.png" alt="#" />
+                    </div>
+                    <div class="product_blog_cont">
+                        <h3>The Coffee Break</h3>
+                        <h4><span class="theme_color">$</span>50</h4>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="product_blog_img">
+                        <img src="images/rs1.png" alt="#" />
+                    </div>
+                    <div class="product_blog_cont">
+                        <h3>Homemade</h3>
+                        <h4><span class="theme_color">$</span>10</h4>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="product_blog_img">
+                        <img src="images/rs2.png" alt="#" />
+                    </div>
+                    <div class="product_blog_cont">
+                        <h3>Noodles</h3>
+                        <h4><span class="theme_color">$</span>20</h4>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="product_blog_img">
+                        <img src="images/rs3.png" alt="#" />
+                    </div>
+                    <div class="product_blog_cont">
+                        <h3>Egg</h3>
+                        <h4><span class="theme_color">$</span>30</h4>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="product_blog_img">
+                        <img src="images/rs4.png" alt="#" />
+                    </div>
+                    <div class="product_blog_cont">
+                        <h3>Sushi Dizzy</h3>
+                        <h4><span class="theme_color">$</span>40</h4>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="product_blog_img">
+                        <img src="images/rs5.png" alt="#" />
+                    </div>
+                    <div class="product_blog_cont">
+                        <h3>The Coffee Break</h3>
+                        <h4><span class="theme_color">$</span>50</h4>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</section>
+<div class="bg_bg">
+<!-- about -->
+<div class="about">
+    <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+             <div class="title">
+                <i><img src="images/title.png" alt="#"/></i>
+                <h2>About Our Food & Restaurant</h2>
+                <span>It is a long established fact that a reader will be distracted by the readable content of a
+                   <br> page when looking at its layout. The point of using Lorem
+                </span>
+             </div>
+          </div>
+       </div>
+       <div class="row">
+         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+             <div class="about_box">
+                 <h3>Best Food</h3>
+                 <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscureContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard </p>
+                 <a href="#">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+             </div>
+         </div>
+          <div class="col-xl-5 col-lg-5 col-md-10 col-sm-12 about_img_boxpdnt">
+             <div class="about_img">
+                 <figure><img src="images/about-img.jpg" alt="#/"></figure>
+             </div>
+         </div>      
+       </div> 
+    </div>
+</div>
+<!-- end about -->
+
+<!-- blog -->
+<div class="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="title">
+          <i><img src="images/title.png" alt="#"/></i>
+          <h2>Our Blog</h2>
+          <span>when looking at its layout. The point of using Lorem</span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mar_bottom">
+        <div class="blog_box">
+          <div class="blog_img_box">
+            <figure><img src="images/blog_img1.png" alt="#"/>
+             <span>02 FEB 2019</span>
+            </figure>
+          </div>
+          <h3>Spicy Barger</h3>
+          <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the </p>
+        </div>
+      </div>
+       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mar_bottom">
+        <div class="blog_box">
+          <div class="blog_img_box">
+            <figure><img src="images/blog_img2.png" alt="#"/>
+             <span>02 FEB 2019</span>
+            </figure>
+          </div>
+          <h3>Egg & Tosh</h3>
+          <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the </p>
+        </div>
+      </div>
+       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+        <div class="blog_box">
+          <div class="blog_img_box">
+            <figure><img src="images/blog_img3.png" alt="#"/>
+             <span>02 FEB 2019</span>
+            </figure>
+          </div>
+          <h3>Pizza</h3>
+          <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end blog -->
+
+<!-- Our Client -->
+<div class="Client">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="title">
+          <i><img src="images/title.png" alt="#"/></i>
+          <h2>Our Client</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+         <div class="Client_box">
+           <img src="images/client.jpg" alt="#"/>
+           <h3>Roock Due</h3>
+           <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don’t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn’t anything embarrassing hidden in the middle of text.</p>
+           <i><img src="images/client_icon.png" alt="#"/></i>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>  
+<!-- end Our Client -->
+</div>
+@endsection
+    
