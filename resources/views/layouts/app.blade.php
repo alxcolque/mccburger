@@ -86,65 +86,10 @@
     </div>
   </nav>
 
-  <!-- Masthead -->
-  <header class="masthead bg-dark text-white text-center">
-    <div class="d-flex  flex-column">
+  <!-- Masthead header -->
+  @yield('header')
 
-      <!-- Masthead Avatar Image -->
-
-      <div class="row">
-          <div class="col-md-12">
-              <div class="full">
-                  <div id="main_slider" class="carousel vert slide" data-ride="carousel" data-interval="5000">
-                      <div class="carousel-inner">
-                          <div class="carousel-item active">
-                              <div class="row">
-                                  <div class="col-md-5">
-                                      <div class="slider_cont">
-                                          <h3 class="text-warning">Descubra Amburguesas de Calidad<br> lo mejor</h3>
-                                          <p>Se trata de un lugar amplio.</p>
-                                          <a class="main_bt_border" href="#portfolio">Ver recetas</a>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-7">
-                                      <div class="slider_image full text_align_center">
-                                          <img class="img-responsive" src="img/portfolio/i3.png" alt="#">
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="carousel-item">
-                              <div class="row">
-                                  <div class="col-md-5">
-                                      <div class="slider_cont">
-                                          <h3 class="text-primary">Amburguesas de <br>Buen Precio</h3>
-                                          <p>El cliente Disfruta de las de las mejores amburguesas personalizadas.</p>
-                                          <a class="main_bt_border" href="#portfolio">Ver recetas</a>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-7 full text_align_center">
-                                      <div class="slider_image">
-                                          <img class="img-responsive" src="img/portfolio/i3.png" alt="#">
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-                          <i class="fa fa-arrow-left"></i>
-                      </a>
-                      <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
-                          <i class="fa fa-fa-angle-up"></i>
-                      </a>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-    </div>
-  </header>
-
-  <!-- Portfolio Section -->
+  <!-- Portfolio Section recetas -->
   <section class="page-section portfolio" id="portfolio">
     <div class="container">
 
@@ -161,60 +106,59 @@
       </div>
 
       <!-- Portfolio Grid Items -->
-					<div class="row aos-init" data-aos="fade-up" data-aos-offset="-300">
-						<div class="col-sm-4">
-							<div class="pricing-box">
-								<img src="img/portfolio/i3.png" alt="starter">
-								<h6 class="font-weight-medium title-text">Starter Business</h6>
-								<h1 class="text-amount mb-4 mt-2">$23</h1>
-								<ul class="pricing-list">
-									<li>Create a free website</li>
-									<li>Connect Domain</li>
-									<li>Business and ecommerce</li>
-									<li>Idea for smaller professional websites</li>
-									<li>Web space</li>
-								</ul>
-								<a href="#" class="btn btn-outline-primary">Puchase Now</a>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="pricing-box selected">
-								<img src="img/portfolio/i3.png" alt="starter">
-								<h6 class="font-weight-medium title-text">Professional</h6>
-								<h1 class="text-amount mb-4 mt-2">$45</h1>
-								<ul class="pricing-list">
-									<li>Create a free website</li>
-									<li>Connect Domain</li>
-									<li>Business and ecommerce</li>
-									<li>Idea for smaller professional websites</li>
-									<li>Web space</li>
-								</ul>
-								<a href="#" class="btn btn-primary">Puchase Now</a>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="pricing-box">
-								<img src="img/portfolio/i3.png" alt="starter">
-								<h6 class="font-weight-medium title-text">Premium</h6>
-								<h1 class="text-amount mb-4 mt-2">$87</h1>
-								<ul class="pricing-list">
-									<li>Create a free website</li>
-									<li>Connect Domain</li>
-									<li>Business and ecommerce</li>
-									<li>Idea for smaller professional websites</li>
-									<li>Web space</li>
-								</ul>
-								<a href="#" class="btn btn-outline-primary">Puchase Now</a>
-							</div>
-						</div>
-					</div>
-
-
+          <div class="row aos-init" data-aos="fade-up" data-aos-offset="-300">
+            <div class="col-sm-4">
+              <div class="pricing-box">
+                <img src="img/portfolio/i3.png" alt="starter">
+                <h6 class="font-weight-medium title-text">Starter Business</h6>
+                <h1 class="text-amount mb-4 mt-2">$23</h1>
+                <ul class="pricing-list">
+                  <li>Create a free website</li>
+                  <li>Connect Domain</li>
+                  <li>Business and ecommerce</li>
+                  <li>Idea for smaller professional websites</li>
+                  <li>Web space</li>
+                </ul>
+                <a href="#" class="btn btn-outline-primary">Puchase Now</a>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="pricing-box selected">
+                <img src="img/portfolio/i3.png" alt="starter">
+                <h6 class="font-weight-medium title-text">Professional</h6>
+                <h1 class="text-amount mb-4 mt-2">$45</h1>
+                <ul class="pricing-list">
+                  <li>Create a free website</li>
+                  <li>Connect Domain</li>
+                  <li>Business and ecommerce</li>
+                  <li>Idea for smaller professional websites</li>
+                  <li>Web space</li>
+                </ul>
+                <a href="#" class="btn btn-primary">Puchase Now</a>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="pricing-box">
+                <img src="img/portfolio/i3.png" alt="starter">
+                <h6 class="font-weight-medium title-text">Premium</h6>
+                <h1 class="text-amount mb-4 mt-2">$87</h1>
+                <ul class="pricing-list">
+                  <li>Create a free website</li>
+                  <li>Connect Domain</li>
+                  <li>Business and ecommerce</li>
+                  <li>Idea for smaller professional websites</li>
+                  <li>Web space</li>
+                </ul>
+                <a href="#" class="btn btn-outline-primary">Puchase Now</a>
+              </div>
+            </div>
+          </div>
 
       <!-- /.row -->
 
     </div>
   </section>
+
 
   <!-- About Section -->
   <section class="page-section bg-primary text-white mb-0" id="about">
