@@ -14,20 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/blog', function () {
-    return view('blog');
-});
 
-Route::get('/contact', function () {
-    return view('contact');
-});
 
 Route::get('/recipe', function () {
     return view('recipe');
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('clienteweb','ClienteWebController@index')->name('home');
+Route::get('cesta','ClienteWebController@cesta');
+
+Route::get('cajero','CajeroController@index');

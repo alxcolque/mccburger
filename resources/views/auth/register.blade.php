@@ -52,7 +52,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-label-group">
-                    <input type="text" id="lastname" class="form-control  @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" autocomplete="lastname" placeholder="First name" required="required" autofocus="autofocus">
+                    <input type="text" id="lastname" class="form-control  @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" autocomplete="lastname" placeholder="Last name" required="required" autofocus="autofocus">
                     @error('lastname')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
