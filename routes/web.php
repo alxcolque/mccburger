@@ -24,6 +24,17 @@ Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('clienteweb','ClienteWebController@index')->name('home');
+
 Route::get('cesta','ClienteWebController@cesta');
 
 Route::get('cajero','CajeroController@index');
+
+// Route::get('/posts','PostsController@index');
+// Route::get('/posts/create','PostsController@create');
+// Route::get('/posts/{post}','PostsController@show');
+// Route::post('/posts','PostsController@store');
+// Route::get('/posts/{post}/edit','PostsController@edit');
+// Route::patch('/posts/{post}','PostsController@update');
+// Route::delete('/posts/{post}','PostsController@destroy');
+
+Route::resource('posts','PostsController',);
