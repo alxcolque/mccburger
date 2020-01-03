@@ -30,6 +30,37 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo;
+    // public function redirectTo()
+    // {
+    //     switch(Auth::user()->rol_id){
+    //         case 1:
+    //                 $this->redirectTo = '/mccb';
+    //             return $this->redirectTo;
+    //             break;
+    //         case 2:
+    //                 $this->redirectTo = '/cajero';
+    //             return $this->redirectTo;
+    //             break;
+    //         case 3:
+    //             $this->redirectTo = '/recepcion';
+    //             return $this->redirectTo;
+    //             break;
+    //         case 4:
+    //                 $this->redirectTo = '/elaborador';
+    //             return $this->redirectTo;
+    //             break;
+    //         case 5:
+    //             $this->redirectTo = '/supervisor';
+    //             return $this->redirectTo;
+    //             break;
+    //         default:
+    //             $this->redirectTo = '/login';
+    //             return $this->redirectTo;
+    //     }
+    //
+    //     // return $next($request);
+    // }
 
     /**
      * Create a new controller instance.

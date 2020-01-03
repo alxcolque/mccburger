@@ -14,20 +14,20 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-
 Route::get('/recipe', function () {
     return view('recipe');
 });
 Auth::routes();
-
+Route::get('/mccb', 'ClienteWebController@index')->name('cliente')->middleware('clienteweb');
+Route::get('/cajero', 'CajeroController@index')->name('cajero')->middleware('cajero');
+Route::get('/recepcion', 'RecepcionController@index')->name('recepcion')->middleware('recepcion');
+Route::get('/elaborador', 'ElaboradorController@index')->name('elaborador')->middleware('elaborador');
+Route::get('/supervisor', 'SupervisorController@index')->name('supervisor')->middleware('supervisor');
 //Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('clienteweb','ClienteWebController@index')->name('home');
-
-Route::get('cesta','ClienteWebController@cesta');
-
-Route::get('cajero','CajeroController@index');
+//Route::get('login','LoginController@index');
+// Route::get('clienteweb','ClienteWebController@index')->name('home');
+// Route::get('cesta','ClienteWebController@cesta');
+// Route::get('cajero','CajeroController@index');
 
 // Route::get('/posts','PostsController@index');
 // Route::get('/posts/create','PostsController@create');

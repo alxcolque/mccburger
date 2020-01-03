@@ -49,7 +49,7 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Supervisor </a>
                     </li>
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
@@ -219,8 +219,10 @@
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="admin/images/admin.jpg" alt="User Avatar"><span class="caret">{{ Auth::user()->name }}</span>
                         </a>
+
+
 
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
@@ -229,7 +231,13 @@
 
                             <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>
+                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();">
+                                          <i class="fa fa-power-off"></i>{{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </div>
                     </div>
 
@@ -287,10 +295,37 @@
     <script src="admin/vendors/jszip/dist/jszip.min.js"></script>
     <script src="admin/vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="admin/vendors/pdfmake/build/vfs_fonts.js"></script>
+
     <script src="admin/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
     <script src="admin/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
     <script src="admin/vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
     <script src="admin/assets/js/init-scripts/data-table/datatables-init.js"></script>
+
+
+    <script src="admin/vendors/chart.js/dist/Chart.bundle.min.js"></script>
+    <script src="admin/assets/js/dashboard.js"></script>
+    <script src="admin/assets/js/widgets.js"></script>
+    <script src="admin/vendors/jqvmap/dist/jquery.vmap.min.js"></script>
+    <script src="admin/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <script src="admin/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script>
+        (function($) {
+            "use strict";
+
+            jQuery('#vmap').vectorMap({
+                map: 'world_en',
+                backgroundColor: null,
+                color: '#ffffff',
+                hoverOpacity: 0.7,
+                selectedColor: '#1de9b6',
+                enableZoom: true,
+                showTooltip: true,
+                values: sample_data,
+                scaleColors: ['#1de9b6', '#03a9f5'],
+                normalizeFunction: 'polynomial'
+            });
+        })(jQuery);
+    </script>
 
     <!-- Custom scripts for this template -->
 </body>
