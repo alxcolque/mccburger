@@ -13,7 +13,11 @@ class CategoriaInsumos extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('categoria_insumos', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('descripcion',30);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +27,6 @@ class CategoriaInsumos extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('categoria_insumos');
     }
 }
