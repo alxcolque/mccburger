@@ -51,11 +51,15 @@
                     <li class="active">
                         <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Principal </a>
                     </li>
-                    <h3 class="menu-title">UI elementos</h3><!-- /.menu-title -->
-                    <li>
-                        <a href="#"> <i class="menu-icon fa fa-laptop"></i>Insumos </a>
+                    <h3 class="menu-title">Elementos</h3><!-- /.menu-title -->
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Insumos</a>
+                        <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon"></i><a href="{{route('categoria_insumos.index')}}">Categorias</a></li>
+                        <li><i class="menu-icon"></i><a href="{{route('insumos.index')}}">Listar Insumos</a></li>
+                        </ul>
                     </li>
-                    <li>
+                    <!--<li>
                         <a href="#"> <i class="menu-icon fa fa-table"></i>Stock </a>
                     </li>
                     <li>
@@ -63,7 +67,7 @@
                     </li>
                     <li>
                         <a href="#"> <i class="menu-icon fa fa-file-text"></i>Blogs </a>
-                    </li>
+                    </li>-->
 
                     <h3 class="menu-title">Recursos Humanos</h3><!-- /.menu-title -->
 

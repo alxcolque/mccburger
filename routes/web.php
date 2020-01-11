@@ -23,6 +23,8 @@ Route::get('/cajero', 'CajeroController@index')->name('cajero')->middleware('caj
 Route::get('/recepcion', 'RecepcionController@index')->name('recepcion')->middleware('recepcion');
 Route::get('/elaborador', 'ElaboradorController@index')->name('elaborador')->middleware('elaborador');
 Route::get('/supervisor', 'SupervisorController@index')->name('supervisor')->middleware('supervisor');
+
+
 //Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('login','LoginController@index');
 // Route::get('clienteweb','ClienteWebController@index')->name('home');
@@ -38,3 +40,6 @@ Route::get('/supervisor', 'SupervisorController@index')->name('supervisor')->mid
 // Route::delete('/posts/{post}','PostsController@destroy');
 
 //Route::resource('posts','PostsController',);
+//INSUMOS Y CONTROL INSUMOS
+Route::resource('insumos', 'InsumosController');
+Route::resource('categoria_insumos', 'Categoria_InsumosController');
