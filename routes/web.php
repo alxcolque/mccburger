@@ -37,4 +37,4 @@ Route::get('/supervisor', 'SupervisorController@index')->name('supervisor')->mid
 // Route::patch('/posts/{post}','PostsController@update');
 // Route::delete('/posts/{post}','PostsController@destroy');
 
-Route::resource('posts','PostsController',);
+//Route::resource('posts','PostsController',);

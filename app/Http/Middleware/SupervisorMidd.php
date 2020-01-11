@@ -35,7 +35,10 @@ class SupervisorMidd
       if (Auth::user()->rol_id == 4) {
           return redirect()->route('elaborador');
       }
-
+      if(Auth::user()->ro_id==5)
+      {
+        return reditect()->route('supervisor');
+      }  
       if (Auth::user()->rol_id == 5) {
           return $next($request);;
       }

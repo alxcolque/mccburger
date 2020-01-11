@@ -1,6 +1,13 @@
 @extends('cajero.layouts.dashboard')
 @section('contenido')
-<div class="content mt-3">
+<div class="container-fluid">
+
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="#">Dashboard</a>
+    </li>
+    <li class="breadcrumb-item active">Cajero</li>
+  </ol>
 
     <div class="col-sm-12">
         <div class="alert  alert-success alert-dismissible fade show" role="alert">
