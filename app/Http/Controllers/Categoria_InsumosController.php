@@ -39,7 +39,7 @@ class Categoria_InsumosController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'descripcion'=> "required|unique:categoria_insumos,descripcion",
+            'descripcion'=> "required|max:30|unique:categoria_insumos,descripcion",
         ]);
         Categoria_Insumos::create($request->all());
         return redirect()->route('categoria_insumos.index');
@@ -78,7 +78,7 @@ class Categoria_InsumosController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'descripcion'=> "required|unique:categoria_insumos,descripcion,$id",
+            'descripcion'=> "required|max=30|unique:categoria_insumos,descripcion,$id",
         ]);
         Categoria_Insumos::findorfail($id)->update($request->all());
         //redireccionar
