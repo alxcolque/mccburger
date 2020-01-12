@@ -16,7 +16,7 @@ class Insumos extends Migration
         Schema::create('insumos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('insumo',30);
-            $table->double('precio',8,2);
+            $table->decimal('precio',8,2);
             $table->unsignedBigInteger('fkcategoria_insumos');
             $table->foreign('fkcategoria_insumos')
                 ->references('id')
