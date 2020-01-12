@@ -44,8 +44,8 @@
                       <td>{{$Insumo->FInsumos->descripcion}}</td>
                       <td>
                         <div class="float-left">
-                          <a href="#"><i class="btn btn-block btn-secondary fa fa-edit"></i></a>
-                            <form  action="#" method="POST">
+                        <a href="{{route('insumos.edit',$Insumo->id)}}"><i class="btn btn-block btn-secondary fa fa-edit"></i></a>
+                            <form  action="{{route('insumos.destroy',$Insumo->id)}}" method="POST">
                               {!!method_field('DELETE')!!}
                               @csrf
                               <a><button class="btn btn-block btn-danger btn fa fa-trash"></button></a>

@@ -40,14 +40,14 @@ class InsumosController extends Controller
      */
     public function store(Request $request)
     {
-        /*$this->validate($request, [
+        $this->validate($request, [
             'insumo'=> "required|unique:insumos,insumo|max:30",
             'precio' => 'required|regex:/^\d+(\.\d{1,2})?$/i',
             'fkcategoria_insumos' => 'required',
         ]);
         Insumos::create($request->all());
-        return redirect()->route('insumos.index');*/
-        $this->validate($request, [
+        return redirect()->route('insumos.index');
+        /*$this->validate($request, [
             'insumo'=> "required|unique:insumos,insumo|max:30",
             'precio' => 'required|regex:/^\d+(\,\d{1,2})?$/i',
             'fkcategoria_insumos' => 'required'
@@ -59,7 +59,7 @@ class InsumosController extends Controller
             'created_at'=>Carbon::now(),   
             'updated_at'=>Carbon::now(),
         ]);
-        return redirect()->route('insumos.index');
+        return redirect()->route('insumos.index');*/
     }
 
     /**
@@ -81,7 +81,9 @@ class InsumosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $InsumEdit = Insumos::findorfail($id);
+        $CategIns = Categoria_Insumos::all();
+        return view('insumos.edit', compact('InsumEdit','CategIns'));
     }
 
     /**
@@ -93,7 +95,14 @@ class InsumosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'insumo'=> "required|max:30|unique:insumos,insumo,$id",
+            'precio' => 'required|regex:/^\d+(\.\d{1,2})?$/i',
+            'fkcategoria_insumos' => 'required',
+        ]);
+        Insumos::findorfail($id)->update($request->all());
+        //redireccionar
+        return redirect()->route('insumos.index');
     }
 
     /**
@@ -104,6 +113,7 @@ class InsumosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Insumos::findorfail($id)->delete();
+        return redirect()->route('insumos.index');
     }
 }
