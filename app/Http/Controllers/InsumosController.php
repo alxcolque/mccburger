@@ -18,7 +18,7 @@ class InsumosController extends Controller
     public function index()
     {
         $Insumosv=Insumos::All();
-        return view('insumos.index',compact('Insumosv'));
+        return view('supervisor.insumos.index',compact('Insumosv'));
     }
 
     /**
@@ -29,7 +29,7 @@ class InsumosController extends Controller
     public function create()
     {
         $CategIns = Categoria_Insumos::all();
-        return view('insumos.create',compact('CategIns'));
+        return view('supervisor.insumos.create',compact('CategIns'));
     }
 
     /**
@@ -46,7 +46,7 @@ class InsumosController extends Controller
             'fkcategoria_insumos' => 'required',
         ]);
         Insumos::create($request->all());
-        return redirect()->route('insumos.index');
+        return redirect()->route('supervisor.insumos.index');
         /*$this->validate($request, [
             'insumo'=> "required|unique:insumos,insumo|max:30",
             'precio' => 'required|regex:/^\d+(\,\d{1,2})?$/i',
@@ -83,7 +83,7 @@ class InsumosController extends Controller
     {
         $InsumEdit = Insumos::findorfail($id);
         $CategIns = Categoria_Insumos::all();
-        return view('insumos.edit', compact('InsumEdit','CategIns'));
+        return view('supervisor.insumos.edit', compact('InsumEdit','CategIns'));
     }
 
     /**
@@ -102,7 +102,7 @@ class InsumosController extends Controller
         ]);
         Insumos::findorfail($id)->update($request->all());
         //redireccionar
-        return redirect()->route('insumos.index');
+        return redirect()->route('supervisor.insumos.index');
     }
 
     /**
@@ -114,6 +114,6 @@ class InsumosController extends Controller
     public function destroy($id)
     {
         Insumos::findorfail($id)->delete();
-        return redirect()->route('insumos.index');
+        return redirect()->route('supervisor.insumos.index');
     }
 }

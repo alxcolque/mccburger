@@ -17,7 +17,7 @@ class Categoria_InsumosController extends Controller
     public function index()
     {
         $CatI=Categoria_Insumos::All();
-        return view('categoria_insumos.index',compact('CatI'));
+        return view('supervisor.categoria_insumos.index',compact('CatI'));
     }
 
     /**
@@ -27,7 +27,7 @@ class Categoria_InsumosController extends Controller
      */
     public function create()
     {
-        return view('categoria_insumos.create');
+        return view('supervisor.categoria_insumos.create');
     }
 
     /**
@@ -42,7 +42,7 @@ class Categoria_InsumosController extends Controller
             'descripcion'=> "required|max:30|unique:categoria_insumos,descripcion",
         ]);
         Categoria_Insumos::create($request->all());
-        return redirect()->route('categoria_insumos.index');
+        return redirect()->route('supervisor.categoria_insumos.index');
     }
 
     /**
@@ -65,7 +65,7 @@ class Categoria_InsumosController extends Controller
     public function edit($id)
     {
         $CategEdit = Categoria_Insumos::findorfail($id);
-        return view('categoria_insumos.edit', compact('CategEdit'));
+        return view('supervisor.categoria_insumos.edit', compact('CategEdit'));
     }
 
     /**
@@ -82,7 +82,7 @@ class Categoria_InsumosController extends Controller
         ]);
         Categoria_Insumos::findorfail($id)->update($request->all());
         //redireccionar
-        return redirect()->route('categoria_insumos.index');
+        return redirect()->route('supervisor.categoria_insumos.index');
     }
 
     /**
@@ -94,6 +94,6 @@ class Categoria_InsumosController extends Controller
     public function destroy($id)
     {
         Categoria_Insumos::findorfail($id)->delete();
-        return redirect()->route('categoria_insumos.index');
+        return redirect()->route('supervisor.categoria_insumos.index');
     }
 }

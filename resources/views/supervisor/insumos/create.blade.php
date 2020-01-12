@@ -22,12 +22,12 @@
         @csrf    
         <p class="text-center">Registrar Insumo</p><br>
             <div class="form-group formuswidth">
-            <input type="text" class="form-control" name="descripcion" value="{{old('insumo')}}" placeholder="Insumo">
+            <input type="text" class="form-control" name="insumo" placeholder="Insumo">
             {!!$errors->first('insumo')!!}
             </div>
             <div class="form-group formuswidth">
-                <input type="text" class="form-control" name="descripcion" value="{{old('precio')}}" placeholder="Precio">
-                {!!$errors->first('precio')!!}
+                <input type="text" class="form-control" name="precio" placeholder="Precio">
+            {!!$errors->first('precio')!!}
             </div>
             <div>
                 <select name="fkcategoria_insumos" class="form-control text-center formuswidth mt-3">
