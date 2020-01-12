@@ -18,7 +18,10 @@ class Insumos extends Migration
             $table->string('insumo',30);
             $table->double('precio',8,2);
             $table->unsignedBigInteger('fkcategoria_insumos');
-            $table->foreign('fkcategoria_insumos')->references('id')->on('categoria_insumos')->onDelete('cascade');
+            $table->foreign('fkcategoria_insumos')
+                ->references('id')
+                ->on('categoria_insumos')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

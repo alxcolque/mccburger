@@ -1,0 +1,12 @@
+[33m606d277[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m cr
+[33m557eadc[m nyx
+[33m28f2f4e[m PRUEBA
+[33md91cc23[m Se realizo la intergracion de multiusuario
+[33m429f0a0[m Obtener datos en las datatables desde la base de datos, y modificacion de estilos de admin
+[33m7e96eb0[m Se ha creado la tabla users y se logró conectar con la base de datos MySQL
+[33mb6dcd86[m Division de carpetas por trabajo de usuario y puesto en orden login y rgister
+[33m516d21c[m Cambio de pantilla y bootstrap 4.3.1
+[33mb1ff572[m Agregamos login y register a travez de un comando de laravel
+[33m7d22812[m sin plantillas lo quitamos por que nos equivocamos al poner
+[33m758bd71[m Creacion de navegacion y estilos
+[33m7907ddd[m Agremanos templates de usuario
