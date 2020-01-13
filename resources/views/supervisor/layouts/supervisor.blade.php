@@ -61,7 +61,6 @@
                         <li><i class="menu-icon fa fa-folder-open"></i><a href="#">Stock Insumos</a></li>
                         </ul>
                     </li>
-                    
                     <li>
                         <a href="#"> <i class="menu-icon fa fa-money"></i>Ventas </a>
                     </li>
@@ -70,6 +69,15 @@
                     </li>
                     <li>
                         <a href="#"> <i class="menu-icon fa fa-table"></i>Contactos </a>
+                    </li>
+                    <h3 class="menu-title">Menus</h3><!-- /.menu-title -->
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list-ul"></i>Menu</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-plus-square-o"></i><a href="{{'menus'}}">Snack</a></li>
+                            <li><i class="menu-icon fa fa-check-square"></i><a href="#">Hamburguesas</a></li>
+                        </ul>
                     </li>
 
                     <h3 class="menu-title">Recursos Humanos</h3><!-- /.menu-title -->
@@ -291,8 +299,26 @@
             });
         })(jQuery);
     </script>
-
     <!-- Custom scripts for this template -->
+    <script type="text/javascript">
+    $(function () {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('contenido')
+            }
+      });
+      $('#btn_cat_Menu').click(function () {
+          /*$('#saveBtn').val("create-product");
+          $('#product_id').val('');
+          $('#productForm').trigger("reset");
+          $('#modelHeading').html("Create New Product");*/
+          //$('#catModal').modal('show');
+          alert();
+
+      });
+
+    });
+    </script>
 </body>
 
 </html>
