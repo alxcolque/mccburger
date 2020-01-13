@@ -22,12 +22,12 @@
     </div>
     <!--/.col-->
     <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-table"></i>
-          Listado de Insumos</div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table id="usr" class="display table-bordered" style="border-width: 2px; border-color: black;">
+      <div class="card-header">
+        <i class="fa fa-table"></i>
+        Data Table Example</div>
+      <div class="card-body">
+        <div class="table-responsive">
+            <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
               <thead><tr class="text-black text-center">
                 <th>ID</th>
                 <th>Insumo</th>
@@ -56,9 +56,9 @@
                 @endforeach    
             </tbody>
           </table>
-          </div>
         </div>
-        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
       </div>
+      <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
 </div> <!-- .content -->
 @endsection
