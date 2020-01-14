@@ -41,7 +41,7 @@ Route::get('/supervisor', 'SupervisorController@index')->name('supervisor')->mid
 
 Route::resource('posts','PostsController');
 //MENUS
-Route::resource('menus','CatMenuController');
+Route::resource('catmenus','CatMenuController');
 //INSUMOS Y CONTROL INSUMOS y insumos Stocks
 Route::resource('insumos', 'InsumosController');
 Route::resource('categoria_insumos', 'Categoria_InsumosController');

@@ -20,7 +20,7 @@
           </div>
       </div>
       <button href="javascript:void(0)"  type="button" class="btn btn-success"><i class="fa fa-plus"></i>&nbsp; Añadir Nuevo</button>
-      <a id="btn_cat_Menu" href="{{route('menus.create')}}" type="button" class="btn btn-primary btn-sm"><i class="fa fa-star"></i>&nbsp; Categoria Menu</a>
+      <a id="btn_cat_Menu" href="{{route('catmenus.create')}}" type="button" class="btn btn-primary btn-sm"><i class="fa fa-star"></i>&nbsp; Categoria Menu</a>
       <!-- DataTables Example -->
       <div class="card mb-3">
         <div class="card-header">
@@ -84,7 +84,7 @@
                   <div class="card mb-3">
                     <div class="card-body">
                       <div class="table-responsive">
-                        <table id="dataTables" class="table table-striped table-bordered">
+                        <table id="dataTable" class="table table-striped table-bordered">
                           <thead>
                             <tr>
                               <th>Id</th>
@@ -94,7 +94,7 @@
                           </thead>
 
                           <tbody>
-                            @foreach ($categoriamenus as $r)
+                            <!--@foreach ($categoriamenus as $r)
                             <tr id="cate_id_{{ $r->id }}">
                               <td>{{$r['id']}}</td>
                               <td>{{$r->categoria}}</td>
@@ -103,11 +103,10 @@
                                 <a href="javascript:void(0)" id="delete-post" data-id="{{$r->id }}" class="btn btn-danger delete-post"><i class="fa fa-trash"></i></a>
                               </center></td>
                             </tr>
-                            @endforeach
+                            @endforeach-->
 
                           </tbody>
                         </table>
-                        {{ $categoriamenus->links() }}
                       </div>
                     </div>
                   </div>

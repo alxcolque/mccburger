@@ -15,7 +15,7 @@ class CatMenuController extends Controller
     public function index()
     {
         $data['categoriamenus'] = CategoriaMenu::orderBy('id','desc')->paginate(8);
-        return view('supervisor.menus.menu_view',$data);
+        return view('supervisor.menus.cat_menu',$data);
     }
 
     /**
@@ -36,7 +36,15 @@ class CatMenuController extends Controller
      */
     public function store(Request $request)
     {
-        
+      $validatedData = $request->validate([
+          'categoria' => 'required|max:30',
+          /*'genre' => 'required|max:255',
+          'imdb_rating' => 'required|numeric',
+          'lead_actor' => 'required|max:255',*/
+      ]);
+      $show = CategoriaMenu::create($validatedData);
+
+      return redirect('/catmenus')->with('success', 'Registro guardado con exito');
     }
 
     /**
@@ -56,12 +64,10 @@ class CatMenuController extends Controller
      * @param  \App\CategoriaMenu  $categoriaMenu
      * @return \Illuminate\Http\Response
      */
-    public function edit(CategoriaMenu $categoriaMenu)
+    public function edit($id)
     {
-        $where = array('id' => $id);
-        $post  = CategoriaMenu::where($where)->first();
-
-        return Response::json($post);
+        $cmEdit = CategoriaMenu::findOrFail($id);
+        return view('supervisor.menus.cat_edit', compact('cmEdit'));
     }
 
     /**
@@ -71,9 +77,13 @@ class CatMenuController extends Controller
      * @param  \App\CategoriaMenu  $categoriaMenu
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CategoriaMenu $categoriaMenu)
+    public function update(Request $request, $id)
     {
-        //
+      $validatedData = $request->validate([
+        'categoria' => "required|max:30,$id",
+      ]);
+      CategoriaMenu::whereId($id)->update($validatedData);
+      return redirect('/catmenus')->with('success', 'Actualizado Correctamente');
     }
 
     /**
@@ -84,8 +94,8 @@ class CatMenuController extends Controller
      */
     public function destroy(CategoriaMenu $categoriaMenu)
     {
-        $post = Post::where('id',$id)->delete();
-   
-        return Response::json($post);
+        $cmEdit = CategoriaMenu::where('id',$id)->delete();
+
+        return Response::json($cmEdit);
     }
 }
