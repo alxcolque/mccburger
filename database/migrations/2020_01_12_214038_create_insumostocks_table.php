@@ -14,12 +14,13 @@ class CreateInsumostocksTable extends Migration
     public function up()
     {
         Schema::create('insumostocks', function (Blueprint $table) {
-            $table->timestamps();
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('ins_id');
             $table->unsignedBigInteger('tienda_id');
             $table->index(['ins_id', 'tienda_id']);
             $table->integer('cantidad');
             $table->dateTime('fecha', 0);
+            $table->timestamps();
             
             $table->foreign('ins_id')
                 ->references('id')->on('insumos')

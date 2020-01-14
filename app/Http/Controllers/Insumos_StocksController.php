@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Categoria_Insumos;
+use App\Tiendas;
 use App\Insumos;
-use CategoriaInsumos;
+use App\Insumos_Stocks;
+
 use Illuminate\Http\Request;
 
-class Categoria_InsumosController extends Controller
+class Insumos_StocksController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +17,8 @@ class Categoria_InsumosController extends Controller
      */
     public function index()
     {
-        $CatI=Categoria_Insumos::All();
-        return view('supervisor.categoria_insumos.index',compact('CatI'));
+        $InsStockInf=Insumos_Stocks::all();
+        return view('supervisor.insumos_stocks.index',compact('InsStockInf'));
     }
 
     /**
@@ -27,7 +28,9 @@ class Categoria_InsumosController extends Controller
      */
     public function create()
     {
-        return view('supervisor.categoria_insumos.create');
+        $InsInf=Insumos::all();
+        $TieInf=Tiendas::all();
+        return view('supervisor.insumos_stocks.create',compact('InsInf','TieInf'));
     }
 
     /**
@@ -39,10 +42,13 @@ class Categoria_InsumosController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'descripcion'=> "required|max:30|unique:categoria_insumos,descripcion",
+            'ins_id'=> "required",
+            'tienda_id' => 'required',
+            'cantidad' => 'required',
+            'fecha' => 'required',
         ]);
-        Categoria_Insumos::create($request->all());
-        return redirect()->route('categoria_insumos.index');
+        Insumos_Stocks::create($request->all());
+        return redirect()->route('insumos_stocks.index');
     }
 
     /**
@@ -64,8 +70,10 @@ class Categoria_InsumosController extends Controller
      */
     public function edit($id)
     {
-        $CategEdit = Categoria_Insumos::findorfail($id);
-        return view('supervisor.categoria_insumos.edit', compact('CategEdit'));
+        $InsumStockEdit=Insumos_Stocks::findorfail($id);
+        $InsInf=Insumos::all();
+        $TieInf=Tiendas::all();
+        return view('supervisor.insumos_stocks.edit',compact('InsInf','TieInf','InsumStockEdit'));
     }
 
     /**
@@ -78,11 +86,13 @@ class Categoria_InsumosController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'descripcion'=> "required|max:30|unique:categoria_insumos,descripcion,$id",
+            'ins_id'=> "required",
+            'tienda_id' => 'required',
+            'cantidad' => 'required',
+            'fecha' => 'required',
         ]);
-        Categoria_Insumos::findorfail($id)->update($request->all());
-        //redireccionar
-        return redirect()->route('categoria_insumos.index');
+        Insumos_Stocks::findorfail($id)->update($request->all());
+        return redirect()->route('insumos_stocks.index');
     }
 
     /**
@@ -93,7 +103,7 @@ class Categoria_InsumosController extends Controller
      */
     public function destroy($id)
     {
-        Categoria_Insumos::findorfail($id)->delete();
-        return redirect()->route('categoria_insumos.index');
+        Insumos_Stocks::findorfail($id)->delete();
+        return redirect()->route('insumos_stocks.index');
     }
 }

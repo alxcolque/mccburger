@@ -27,7 +27,7 @@
           Categorias de Insumos</div>
         <div class="card-body">
           <div class="table-responsive">
-            <table id="usr" class="display table-bordered" style="border-width: 2px; border-color: black;">
+            <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
               <thead><tr class="text-black text-center">
                 <th>ID</th>
                 <th>Descripcion</th>

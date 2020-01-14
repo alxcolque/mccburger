@@ -2,7 +2,6 @@
 
 @section('contenido')
 <div class="container-fluid">
-
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
       <a href="{{route('supervisor')}}">Dashboard</a>
@@ -18,34 +17,34 @@
         </div>
     </div>
     <div class="col-sm-12">
-      <a href="{{route('insumos.create')}}" class=""><button class="btn btn-block btn-primary btn-xs mb-2 mr-2" style="width: 100px">Agregar</button></a>
+      <a href="{{route('insumos_stocks.create')}}" class=""><button class="btn btn-block btn-primary btn-xs mb-2 mr-2" style="width: 100px">Agregar</button></a>
     </div>
     <!--/.col-->
     <div class="card mb-3">
       <div class="card-header">
         <i class="fa fa-table"></i>
-        Listado de Insumos</div>
+        Stock de Insumos</div>
       <div class="card-body">
         <div class="table-responsive">
             <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
               <thead><tr class="text-black text-center">
-                <th>ID</th>
+                <th>Cantidad</th>
+                <th>Fecha</th>
                 <th>Insumo</th>
-                <th>Precio</th>
-                <th>Categoria</th>
+                <th>Tienda</th>
                 <th>Accion</th>
               </tr></thead>
               <tbody>
-                @foreach ($Insumosv as $Insumo)
+                @foreach ($InsStockInf as $IStock)
                       <tr>
-                      <td>{{$Insumo->id}}</td>
-                      <td>{{$Insumo->insumo}}</td>
-                      <td>{{$Insumo->precio}}</td>
-                      <td>{{$Insumo->FInsumos->descripcion}}</td>
+                      <td>{{$IStock->cantidad}}</td>
+                      <td>{{$IStock->fecha}}</td>
+                      <td>{{$IStock->FInsStock_ToInsumo->insumo}}</td>
+                      <td>{{$IStock->FInsStock_ToTienda->tienda}}</td>
                       <td>
                         <div class="float-left">
-                        <a href="{{route('insumos.edit',$Insumo->id)}}"><i class="btn btn-block btn-secondary fa fa-edit"></i></a>
-                            <form  action="{{route('insumos.destroy',$Insumo->id)}}" method="POST">
+                        <a href="{{route('insumos_stocks.edit',$IStock->id)}}"><i class="btn btn-block btn-secondary fa fa-edit"></i></a>
+                            <form  action="{{route('insumos_stocks.destroy',$IStock->id)}}" method="POST">
                               {!!method_field('DELETE')!!}
                               @csrf
                               <a><button class="btn btn-block btn-danger btn fa fa-trash"></button></a>

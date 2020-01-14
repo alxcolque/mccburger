@@ -46,7 +46,7 @@ class InsumosController extends Controller
             'fkcategoria_insumos' => 'required',
         ]);
         Insumos::create($request->all());
-        return redirect()->route('supervisor.insumos.index');
+        return redirect()->route('insumos.index');
         /*$this->validate($request, [
             'insumo'=> "required|unique:insumos,insumo|max:30",
             'precio' => 'required|regex:/^\d+(\,\d{1,2})?$/i',
@@ -102,7 +102,7 @@ class InsumosController extends Controller
         ]);
         Insumos::findorfail($id)->update($request->all());
         //redireccionar
-        return redirect()->route('supervisor.insumos.index');
+        return redirect()->route('insumos.index');
     }
 
     /**
@@ -114,6 +114,6 @@ class InsumosController extends Controller
     public function destroy($id)
     {
         Insumos::findorfail($id)->delete();
-        return redirect()->route('supervisor.insumos.index');
+        return redirect()->route('insumos.index');
     }
 }
