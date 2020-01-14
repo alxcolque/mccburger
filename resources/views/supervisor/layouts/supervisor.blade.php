@@ -58,7 +58,7 @@
                         <ul class="sub-menu children dropdown-menu">
                         <li><i class="menu-icon fa fa-folder"></i><a href="{{route('categoria_insumos.index')}}">Categorias</a></li>
                         <li><i class="menu-icon fa fa-gear"></i><a href="{{route('insumos.index')}}">Listar Insumos</a></li>
-                        <li><i class="menu-icon fa fa-folder-open"></i><a href="#">Stock Insumos</a></li>
+                        <li><i class="menu-icon fa fa-folder-open"></i><a href="{{route('insumos_stocks.index')}}">Stock Insumos</a></li>
                         </ul>
                     </li>
                     <li>
