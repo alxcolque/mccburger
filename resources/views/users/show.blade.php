@@ -33,7 +33,7 @@
           @endif
           <p class="card-text text-dark"><b>Nombre:</b> {{$usuario->name}}</p>
           <p class="card-text text-dark"><b>Apellido:</b> {{$usuario->lastname}}</p>
-          <p class="card-text text-dark"><b>Estado:</b> {{$usuario->email}}</p>
+          <p class="card-text text-dark"><b>Email:</b> {{$usuario->email}}</p>
           <br>
           <!--<p class="card-text">Esta es la persona que esta en la parte superios</p>
           <a href="#" class="btn btn-danger">Inhabilitar Usuario</a>
