@@ -20,7 +20,7 @@
           </div>
       </div>
       <button href="javascript:void(0)"  type="button" class="btn btn-success"><i class="fa fa-plus"></i>&nbsp; Añadir Nuevo</button>
-      <button id="btn_cat_Menu" href="javascript:void(0)" type="button" class="btn btn-primary btn-sm"><i class="fa fa-star"></i>&nbsp; Categoria Menu</button>
+      <a id="btn_cat_Menu" href="{{route('menus.create')}}" type="button" class="btn btn-primary btn-sm"><i class="fa fa-star"></i>&nbsp; Categoria Menu</a>
       <!-- DataTables Example -->
       <div class="card mb-3">
         <div class="card-header">

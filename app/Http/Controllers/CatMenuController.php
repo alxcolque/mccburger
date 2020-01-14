@@ -25,7 +25,7 @@ class CatMenuController extends Controller
      */
     public function create()
     {
-        //
+        return view('supervisor.menus.cat_create');
     }
 
     /**
@@ -36,13 +36,7 @@ class CatMenuController extends Controller
      */
     public function store(Request $request)
     {
-        $catID = $request->cat_id;
-        $post   =   CategoriaMenu::updateOrCreate(['id' => $catID],
-                    [
-                    'categoria' => $request->title
-                    ]);
-    
-        return Response::json($post);
+        
     }
 
     /**
