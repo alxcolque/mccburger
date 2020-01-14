@@ -92,10 +92,10 @@ class CatMenuController extends Controller
      * @param  \App\CategoriaMenu  $categoriaMenu
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CategoriaMenu $categoriaMenu)
+    public function destroy($id)
     {
-        $cmEdit = CategoriaMenu::where('id',$id)->delete();
-
-        return Response::json($cmEdit);
+        $cmElim = CategoriaMenu::findOrFail($id);
+        $cmElim->delete();
+        return redirect('/catmenus')->with('success', 'Dato eliminado con éxito');
     }
 }

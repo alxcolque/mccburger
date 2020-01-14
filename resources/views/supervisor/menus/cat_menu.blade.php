@@ -9,14 +9,6 @@
     </li>
     <li class="breadcrumb-item active">Categoria Menus</li>
   </ol>
-  <div class="col-sm-12">
-      <div class="alert  alert-success alert-dismissible fade show" role="alert">
-          <span class="badge badge-pill badge-success">Success</span> You successfully read this important alert message.
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-          </button>
-      </div>
-  </div>
 
   <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 col-12">
     <a id="btn_cat_Menu" href="{{route('catmenus.create')}}" type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp; Añadir Nuevo Tipo</a>
@@ -52,7 +44,7 @@
                            <a href="{{ route('catmenus.edit', $r->id)}}" class="btn btn-info btn-sm">
                              <i class="fa fa-edit"></i>
                            </a>
-                           <form action="" method="post">
+                           <form action="{{ route('catmenus.destroy', $r->id)}}" method="post">
                              @csrf
                              @method('DELETE')
                              <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash"></i></button>
