@@ -301,23 +301,32 @@
     </script>
     <!-- Custom scripts for this template -->
     <script type="text/javascript">
-    $(function () {
+    (function($) {
+        "use strict";
+        jQuery('#btn_cat_Menu').click(function (){
+          $('#postForm').trigger("reset");
+          $('.modal-title').text("Categoria Menu");
+          $('#modal_cat_menu').modal('show');
+        });
+    })(jQuery);
+        jQuery('#edit-post').click(function () {
+          var cat_id = $(this).data('id');
+          alert(cat_id);
+          $.get('menus/'+cat_id+'/edit', function (data) {
+              $('#btn-save').val("edit-categoria");
+              $('#categoria').val(data.categoria);
+          })
+       });
+    /*$(function () {
+
         $.ajaxSetup({
             headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('contenido')
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
       });
-      $('#btn_cat_Menu').click(function () {
-          /*$('#saveBtn').val("create-product");
-          $('#product_id').val('');
-          $('#productForm').trigger("reset");
-          $('#modelHeading').html("Create New Product");*/
-          //$('#catModal').modal('show');
-          alert();
 
-      });
 
-    });
+    });*/
     </script>
 </body>
 

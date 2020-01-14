@@ -36,9 +36,11 @@ class CatMenuController extends Controller
      */
     public function store(Request $request)
     {
-        $postID = $request->post_id;
-        $post   =   Post::updateOrCreate(['id' => $postID],
-                    ['title' => $request->title, 'body' => $request->body]);
+        $catID = $request->cat_id;
+        $post   =   CategoriaMenu::updateOrCreate(['id' => $catID],
+                    [
+                    'categoria' => $request->title
+                    ]);
     
         return Response::json($post);
     }
@@ -63,8 +65,8 @@ class CatMenuController extends Controller
     public function edit(CategoriaMenu $categoriaMenu)
     {
         $where = array('id' => $id);
-        $post  = Post::where($where)->first();
- 
+        $post  = CategoriaMenu::where($where)->first();
+
         return Response::json($post);
     }
 

@@ -20,7 +20,7 @@
           </div>
       </div>
       <button href="javascript:void(0)"  type="button" class="btn btn-success"><i class="fa fa-plus"></i>&nbsp; Añadir Nuevo</button>
-      <button id="btn_cat_Menu" onclick="cateMenu()" type="button" class="btn btn-primary btn-sm"><i class="fa fa-star"></i>&nbsp; Categoria Menu</button>
+      <button id="btn_cat_Menu" href="javascript:void(0)" type="button" class="btn btn-primary btn-sm"><i class="fa fa-star"></i>&nbsp; Categoria Menu</button>
       <!-- DataTables Example -->
       <div class="card mb-3">
         <div class="card-header">
@@ -57,37 +57,67 @@
         <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
       </div>
 
-      <p class="small text-center text-muted my-5">
-        <em>More table examples coming soon...</em>
-      </p>
-
     </div>
 
 
     <!--MODAL CATEGORIA--->
-    <div class="modal fade" id="catModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+    <!-- Bootstrap modal -->
+      <div class="modal fade" id="modal_cat_menu" role="dialog">
+        <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="mediumModalLabel">Medium Modal</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+              <div class="modal-header">
+              <h3 class="modal-title">Nuevo</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
+                <div class="modal-body form">
+                  <form action="#" id="postForm" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="categoria" class="col-sm-12 control-label">Nombre de categoria</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="categoria" name="categoria" placeholder="Escriba Categoria" value="" maxlength="50" required="">
+                        </div>
+
+                    </div>
+                    <button id="btn-save" type="button" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>&nbsp; Guardar</button>
+                  </form>
+                  <!-- DataTables Example -->
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <table id="dataTables" class="table table-striped table-bordered">
+                          <thead>
+                            <tr>
+                              <th>Id</th>
+                              <th>Title</th>
+                              <th><center>accion</center></th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                            @foreach ($categoriamenus as $r)
+                            <tr id="cate_id_{{ $r->id }}">
+                              <td>{{$r['id']}}</td>
+                              <td>{{$r->categoria}}</td>
+                              <td><center>
+                                <a href="javascript:void(0)" id="edit-post" data-id="{{ $r->id }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
+                                <a href="javascript:void(0)" id="delete-post" data-id="{{$r->id }}" class="btn btn-danger delete-post"><i class="fa fa-trash"></i></a>
+                              </center></td>
+                            </tr>
+                            @endforeach
+
+                          </tbody>
+                        </table>
+                        {{ $categoriamenus->links() }}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="modal-body">
-                    <p>
-                        There are three species of zebras: the plains zebra, the mountain zebra and the Grévy's zebra. The plains zebra
-                        and the mountain zebra belong to the subgenus Hippotigris, but Grévy's zebra is the sole species of subgenus
-                        Dolichohippus. The latter resembles an ass, to which it is closely related, while the former two are more
-                        horse-like. All three belong to the genus Equus, along with other living equids.
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary">Confirm</button>
-                </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Salir</button>
             </div>
-        </div>
-    </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+      <!-- End Bootstrap modal -->
     <!--FIN MODAL CATEGORIA--->
 @endsection
