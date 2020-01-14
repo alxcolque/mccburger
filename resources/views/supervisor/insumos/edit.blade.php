@@ -32,7 +32,7 @@
           </div>
           <div>
               <select name="fkcategoria_insumos" class="form-control text-center formuswidth mt-3">
-                  <option hidden value="">Seleccione Categoria</option>
+              <option hidden value="{{$InsumEdit->FInsumos->id}}">{{$InsumEdit->FInsumos->descripcion}}</option>
                   @foreach ($CategIns as $Categ)
                   <option value="{{$Categ->id}}">{{$Categ->descripcion}}</option>    
                   @endforeach
