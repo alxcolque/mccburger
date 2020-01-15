@@ -76,8 +76,8 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list-ul"></i>Menu</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-plus-square-o"></i><a href="{{'catmenus'}}">Snack</a></li>
-                            <li><i class="menu-icon fa fa-check-square"></i><a href="#">Hamburguesas</a></li>
+                            <li><i class="menu-icon fa fa-plus-square-o"></i><a href="{{'catmenus'}}">Tipo</a></li>
+                            <li><i class="menu-icon fa fa-check-square"></i><a href="{{'menus'}}">Menu Burger</a></li>
                         </ul>
                     </li>
 
@@ -303,34 +303,86 @@
     <script src="{{ asset('js/app.js') }}" type="text/js"></script>
     <!-- Custom scripts for this template -->
     <script type="text/javascript">
-    (function($) {
-        /*"use strict";
-        $('#btn_cat_Menu').click(function (){
-          $('#postForm').trigger("reset");
-          $('.modal-title').text("Categoria Menu");
-          $('#modal_cat_menu').modal('show');
-        });*/
+        $(function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+          });
+          var table = $('.data-table').DataTable({
+              processing: true,
+              serverSide: true,
+              ajax: "{{ route('menus.index') }}",
+              columns: [
+                  {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+                  {data: 'menu', name: 'menu'},
+                  {data: 'precio', name: 'precio'},
+                  {data: 'foto', name: 'foto'},
+                  {data: 'cat_id', name: 'cat_id'},
+                  {data: 'action', name: 'action', orderable: false, searchable: false},
+              ]
+          });
+          jQuery('#createNewBook').click(function () {
 
-    })(jQuery);
-        jQuery('#edit-post').click(function () {
-          /*var cat_id = $(this).data('id');
-          alert(cat_id);
-          $.get('menus/'+cat_id+'/edit', function (data) {
-              $('#btn-save').val("edit-categoria");
-              $('#categoria').val(data.categoria);*/
-          })
-       });
-    /*$(function () {
+              alert();/*$('#saveBtn').val("create-book");
+              $('#menu_id').val('');
+              $('#menuForm').trigger("reset");
+              $('.modal-title').text("Create New Book");
+              $('#ajaxModel').modal('show');*/
+          });
+          $('body').on('click', '.editBook', function () {
+            var book_id = $(this).data('id');
+            $.get("{{ route('menus.index') }}" +'/' + book_id +'/edit', function (data) {
+                $('#modelHeading').html("Edit Book");
+                $('#saveBtn').val("edit-book");
+                $('#ajaxModel').modal('show');
+                $('#book_id').val(data.id);
+                $('#title').val(data.menu);
+                $('#author').val(data.precio);
+            })
+         });
+          $('#saveBtn').click(function (e) {
+              e.preventDefault();
+              $(this).html('Save');
 
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-      });
+              $.ajax({
+                data: $('#bookForm').serialize(),
+                url: "{{ route('menus.store') }}",
+                type: "POST",
+                dataType: 'json',
+                success: function (data) {
 
+                    $('#bookForm').trigger("reset");
+                    $('#ajaxModel').modal('hide');
+                    table.draw();
 
-    });*/
-    </script>
+                },
+                error: function (data) {
+                    console.log('Error:', data);
+                    $('#saveBtn').html('Save Changes');
+                }
+            });
+          });
+
+          $('body').on('click', '.deleteBook', function () {
+
+              var book_id = $(this).data("id");
+              confirm("Are You sure want to delete !");
+
+              $.ajax({
+                  type: "DELETE",
+                  url: "{{ route('menus.store') }}"+'/'+book_id,
+                  success: function (data) {
+                      table.draw();
+                  },
+                  error: function (data) {
+                      console.log('Error:', data);
+                  }
+              });
+          });
+
+        });
+      </script>
 </body>
 
 </html>

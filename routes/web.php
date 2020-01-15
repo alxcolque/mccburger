@@ -40,8 +40,10 @@ Route::get('/supervisor', 'SupervisorController@index')->name('supervisor')->mid
 // Route::delete('/posts/{post}','PostsController@destroy');
 
 Route::resource('posts','PostsController');
-//MENUS
+//MENU categoria
 Route::resource('catmenus','CatMenuController');
+//MENUS
+Route::resource('menus','MenuController');
 //INSUMOS Y CONTROL INSUMOS y insumos Stocks
 Route::resource('insumos', 'InsumosController');
 Route::resource('categoria_insumos', 'Categoria_InsumosController');
