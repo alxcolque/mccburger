@@ -21,8 +21,14 @@ class CreateMenusTable extends Migration
             $table->string('foto',50);
             
             $table->unsignedBigInteger('ingrediente_id');
+            $table->unsignedBigInteger('cat_id');
+
             $table->foreign('ingrediente_id')
                 ->references('id')->on('ingredientes')
+                ->onDelete('cascade');
+
+            $table->foreign('cat_id')
+                ->references('id')->on('categoriamenus')
                 ->onDelete('cascade');
         });
     }

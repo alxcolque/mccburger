@@ -76,7 +76,7 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list-ul"></i>Menu</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-plus-square-o"></i><a href="{{'catmenus'}}">Cat Menus</a></li>
+                            <li><i class="menu-icon fa fa-plus-square-o"></i><a href="{{'catmenus'}}">Snack</a></li>
                             <li><i class="menu-icon fa fa-check-square"></i><a href="#">Hamburguesas</a></li>
                         </ul>
                     </li>
