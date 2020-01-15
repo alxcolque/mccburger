@@ -86,11 +86,11 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Personal</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-user"></i><a href="font-fontawesome.html">Clientes</a></li>
-                            <li><i class="menu-icon fa fa-user"></i><a href="font-themify.html">Meseros</a></li>
+                        <li><i class="menu-icon fa fa-user"></i><a href="{{route('usersrol.index')}}">Listado del Personal</a></li>
+                            <!--<li><i class="menu-icon fa fa-user"></i><a href="font-themify.html">Meseros</a></li>
                             <li><i class="menu-icon fa fa-user"></i><a href="font-fontawesome.html">Cajeros</a></li>
                             <li><i class="menu-icon fa fa-user"></i><a href="font-themify.html">Recepción</a></li>
-                            <li><i class="menu-icon fa fa-user"></i><a href="font-fontawesome.html">Elaborador</a></li>
+                            <li><i class="menu-icon fa fa-user"></i><a href="font-fontawesome.html">Elaborador</a></li>-->
                         </ul>
                     </li>
 
