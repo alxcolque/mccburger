@@ -15,19 +15,17 @@ class CreateOrdenesTable extends Migration
     {
         Schema::create('ordenes', function (Blueprint $table) {
             $table->timestamps();
-            $table->unsignedBigInteger('ing_ham');
+            
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('menu_id');
-            $table->unsignedBigInteger('codigo');
+            $table->unsignedBigInteger('to_id');
 
-            $table->index(['ing_ham', 'user_id', 'menu_id']);
+            $table->index(['user_id', 'menu_id','to_id']);
 
             $table->integer('cantidad');
             $table->dateTime('fecha', 0);
 
-            $table->foreign('ing_ham')
-                ->references('id')->on('ingredienteordenes')
-                ->onDelete('cascade');
+            
             $table->foreign('user_id')
                 ->references('id')->on('users')
                 ->onDelete('cascade');
@@ -36,7 +34,7 @@ class CreateOrdenesTable extends Migration
                 ->on('menus')
                 ->onDelete('cascade');
 
-            $table->foreign('codigo')
+            $table->foreign('to_id')
                 ->references('id')
                 ->on('tipoordenes')
                 ->onDelete('cascade');
