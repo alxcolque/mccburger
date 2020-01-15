@@ -49,3 +49,4 @@ Route::resource('insumos', 'InsumosController');
 Route::resource('categoria_insumos', 'Categoria_InsumosController');
 Route::resource('insumos_stocks','Insumos_StocksController');
 Route::resource('users','UsersController');
+Route::resource('usersrol','UsersRolController');

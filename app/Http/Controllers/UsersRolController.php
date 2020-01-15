@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 
-class UsersController extends Controller
+class UsersRolController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        $Usuarios=User::all();
+        return view('users.index',compact('Usuarios'));
     }
 
     /**
@@ -46,8 +47,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $usuario = User::findorfail($id);
-        return view('users.show',compact('usuario'));
+        //
     }
 
     /**
@@ -58,10 +58,9 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $UsuarioEdit = User::findorfail($id);
-        return view('users.edit', compact('UsuarioEdit'));
+        $UsuarioEditRol = User::findorfail($id);
+        return view('users.editrol', compact('UsuarioEditRol'));
     }
-
 
     /**
      * Update the specified resource in storage.
@@ -73,13 +72,10 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required|max:191',
-            'lastname' => 'required|max:191',
-            'email'=> "required|email|unique:users,email,$id",
+            'rol_id' => 'required',
         ]);
-        $request['password'] = bcrypt($request->input('password'));
         User::findorfail($id)->update($request->all());
-        return redirect()->route('users.show',$id);
+        return redirect()->route('usersrol.index');
     }
 
     /**
