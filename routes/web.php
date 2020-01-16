@@ -17,6 +17,8 @@ Route::get('/', function () {
 Route::get('/recipe', function () {
     return view('recipe');
 });
+Route::get('cesta', 'ClienteWebController@cesta');
+
 Auth::routes();
 Route::get('/mccb', 'ClienteWebController@index')->name('cliente')->middleware('clienteweb');
 Route::get('/cajero', 'CajeroController@index')->name('cajero')->middleware('cajero');

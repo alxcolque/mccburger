@@ -100,15 +100,15 @@
             <div class="col-sm-4">
               <div class="pricing-box">
                 <img src="img/portfolio/i3.png" alt="starter">
-                <h6 class="font-weight-medium title-text">Starter Business</h6>
-                <h1 class="text-amount mb-4 mt-2">$23</h1>
-                <ul class="pricing-list">
+                <h6 class="font-weight-medium title-text">Mini Hamburguesa</h6>
+                <h1 class="text-amount mb-4 mt-2">Bs. 10</h1>
+                <!--<ul class="pricing-list">
                   <li>Create a free website</li>
                   <li>Connect Domain</li>
                   <li>Business and ecommerce</li>
                   <li>Idea for smaller professional websites</li>
                   <li>Web space</li>
-                </ul>
+                </ul>-->
                 <button class="btn btn-outline-primary" data-toggle="modal" data-target="#burger">Ordenar</button>
 
               </div>
@@ -117,30 +117,30 @@
             <div class="col-sm-4">
               <div class="pricing-box selected">
                 <img src="img/portfolio/i3.png" alt="starter">
-                <h6 class="font-weight-medium title-text">Professional</h6>
-                <h1 class="text-amount mb-4 mt-2">$45</h1>
-                <ul class="pricing-list">
+                <h6 class="font-weight-medium title-text">Hamburguesa</h6>
+                <h1 class="text-amount mb-4 mt-2">Bs 15</h1>
+                <!--<ul class="pricing-list">
                   <li>Create a free website</li>
                   <li>Connect Domain</li>
                   <li>Business and ecommerce</li>
                   <li>Idea for smaller professional websites</li>
                   <li>Web space</li>
-                </ul>
+                </ul>-->
                 <button class="btn btn-outline-primary" data-toggle="modal" data-target="#burger">Ordenar</button>
               </div>
             </div>
             <div class="col-sm-4">
               <div class="pricing-box">
                 <img src="img/portfolio/i3.png" alt="starter">
-                <h6 class="font-weight-medium title-text">Premium</h6>
-                <h1 class="text-amount mb-4 mt-2">$87</h1>
-                <ul class="pricing-list">
+                <h6 class="font-weight-medium title-text">Hamburguesa Completa</h6>
+                <h1 class="text-amount mb-4 mt-2">Bs 20</h1>
+                <!--<ul class="pricing-list">
                   <li>Create a free website</li>
                   <li>Connect Domain</li>
                   <li>Business and ecommerce</li>
                   <li>Idea for smaller professional websites</li>
                   <li>Web space</li>
-                </ul>
+                </ul>-->
                 <button class="btn btn-outline-primary" data-toggle="modal" data-target="#burger">Ordenar</button>
               </div>
             </div>
@@ -172,47 +172,42 @@
           <div class="row aos-init" data-aos="fade-up" data-aos-offset="-300">
             <div class="col-sm-4">
               <div class="pricing-box">
-                <img src="images/client.jpg" alt="starter">
-                <h6 class="font-weight-medium title-text">Starter Business</h6>
-                <h1 class="text-amount mb-4 mt-2">$23</h1>
+                <img src="images/b1.jpg" alt="starter">
+                <h6 class="font-weight-medium title-text">Vino</h6>
+                <h1 class="text-amount mb-4 mt-2">Bs 100</h1>
                 <ul class="pricing-list">
-                  <li>Create a free website</li>
-                  <li>Connect Domain</li>
-                  <li>Business and ecommerce</li>
-                  <li>Idea for smaller professional websites</li>
-                  <li>Web space</li>
+                  <li>Vino buena</li>
+                  <li>De los 80</li>
+                  <li>Tarijeña</li>
                 </ul>
-                <button class="btn btn-outline-primary" data-toggle="modal" data-target="#snack1">Ordenar</button>
+                <button class="btn btn-outline-primary" data-toggle="modal" data-target="#">Ordenar</button>
               </div>
             </div>
             <div class="col-sm-4">
               <div class="pricing-box selected">
-                <img src="images/client.jpg" alt="starter">
-                <h6 class="font-weight-medium title-text">Professional</h6>
-                <h1 class="text-amount mb-4 mt-2">$45</h1>
+                <img src="images/b2.jpg" alt="starter">
+                <h6 class="font-weight-medium title-text">Cerveza</h6>
+                <h1 class="text-amount mb-4 mt-2">Bs 50</h1>
                 <ul class="pricing-list">
-                  <li>Create a free website</li>
+                  <li>Negra</li>
                   <li>Connect Domain</li>
-                  <li>Business and ecommerce</li>
-                  <li>Idea for smaller professional websites</li>
-                  <li>Web space</li>
+                  <li>Lo mejor</li>
                 </ul>
-                <button class="btn btn-outline-primary" data-toggle="modal" data-target="#snack1">Ordenar</button>
+                <button class="btn btn-outline-primary" data-toggle="modal" data-target="#">Ordenar</button>
               </div>
             </div>
             <div class="col-sm-4">
               <div class="pricing-box">
-                <img src="images/client.jpg" alt="starter">
-                <h6 class="font-weight-medium title-text">Premium</h6>
-                <h1 class="text-amount mb-4 mt-2">$87</h1>
+                <img src="images/b3.jpg" alt="starter">
+                <h6 class="font-weight-medium title-text">Cocacola</h6>
+                <h1 class="text-amount mb-4 mt-2">Bs 10</h1>
                 <ul class="pricing-list">
-                  <li>Create a free website</li>
-                  <li>Connect Domain</li>
-                  <li>Business and ecommerce</li>
-                  <li>Idea for smaller professional websites</li>
-                  <li>Web space</li>
+                  <li>De cocacola</li>
+                  <li>Fria</li>
+                  <li>Sin azucar</li>
+                  <li>Con Sal</li>
                 </ul>
-                <button class="btn btn-outline-primary" data-toggle="modal" data-target="#snack1">Ordenar</button>
+                <button class="btn btn-outline-primary" data-toggle="modal" data-target="#">Ordenar</button>
               </div>
             </div>
           </div>

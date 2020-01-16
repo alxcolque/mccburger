@@ -35,10 +35,10 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ ('clienteweb') }}">Amburgesa</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ ('mccb') }}">Amburgesa</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ ('clienteweb') }}">Snack</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ ('mccb') }}">Snack</a>
           </li>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
@@ -208,7 +208,7 @@
               <small class="inset-right-5 text-gray-light">Total:
               </small> $124
             </div>
-              <a href="cesta.php" class="btn btn-success">Realizar Orden
+              <a href="{{ ('mccb') }}" class="btn btn-success">Realizar Orden
                 <i class="fas fa-shopping-cart"></i>
               </a>
           </div>
@@ -414,7 +414,7 @@
                                     </div>
 
                                   </span></li>
-          												<li class="list-group-item"><span class="m-l-10 text-secondary">Descripcion: </span><span id="arbitro"></li>
+          												<li class="list-group-item"><span class="m-l-10 text-secondary">Descripcion: </span><span></li>
           										</ul>
           								</div>
           								<div class="card-body" id="sec_crea">
