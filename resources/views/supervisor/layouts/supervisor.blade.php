@@ -64,7 +64,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#"> <i class="menu-icon fa fa-money"></i>Ventas </a>
+                        <a href="{{route('tiendas.index')}}"> <i class="menu-icon fa fa-money"></i>Tiendas </a>
                     </li>
                     <li>
                         <a href="{{'posts'}}"> <i class="menu-icon fa fa-file-text"></i>Blogs </a>

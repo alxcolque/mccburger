@@ -52,3 +52,4 @@ Route::resource('users','UsersController');
 Route::resource('usersrol','UsersRolController');
 //cajero
 Route::resource('ventas','VentasController');
+Route::resource('tiendas','TiendasController');

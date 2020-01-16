@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Ventas;
-use App\User;
 use App\Tiendas;
 use Illuminate\Http\Request;
 
-class VentasController extends Controller
+class TiendasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,8 @@ class VentasController extends Controller
      */
     public function index()
     {
-        $Ventasinfo=Ventas::All();
-        return view('cajero.index',compact('Ventasinfo','Userinfo','Tiendasinfo'));
+        $TiendasI=Tiendas::All();
+        return view('supervisor.tiendas.index',compact('TiendasI'));
     }
 
     /**
@@ -27,8 +25,7 @@ class VentasController extends Controller
      */
     public function create()
     {
-        $Tiendasinfo=Tiendas::All();
-        return view('cajero.create',compact('Tiendasinfo'));
+        return view('supervisor.tiendas.create');
     }
 
     /**
@@ -40,12 +37,12 @@ class VentasController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'fecha'=> "required",
-            'total'=> "required|regex:/^\d+(\.\d{1,2})?$/i",
-            'tienda_id'=> "required",            
+            'tienda'=> "required|max:50",
+            'direccion'=> "required|max:50",
+            'nit'=> "required|numeric",
         ]);
-        Ventas::create($request->all());
-        return redirect()->route('ventas.index');
+        Tiendas::create($request->all());
+        return redirect()->route('tiendas.index');
     }
 
     /**
@@ -67,7 +64,8 @@ class VentasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $TiendasEdit = Tiendas::findorfail($id);
+        return view('supervisor.tiendas.edit', compact('TiendasEdit'));
     }
 
     /**
@@ -79,7 +77,14 @@ class VentasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'tienda'=> "required|max:50",
+            'direccion'=> "required|max:50",
+            'nit'=> "required|numeric",
+        ]);
+        Tiendas::findorfail($id)->update($request->all());
+        //redireccionar
+        return redirect()->route('tiendas.index');
     }
 
     /**
@@ -90,6 +95,7 @@ class VentasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Tiendas::findorfail($id)->delete();
+        return redirect()->route('tiendas.index');
     }
 }
