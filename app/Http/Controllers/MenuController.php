@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Menu;
+use DataTables;
+
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -17,20 +19,20 @@ class MenuController extends Controller
         if ($request->ajax()) {
             $data = Menu::latest()->get();
             return Datatables::of($data)
-                    ->addIndexColumn()
-                    ->addColumn('action', function($row){
-   
-                           $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editBook">Edit</a>';
-   
-                           $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deleteBook">Delete</a>';
-    
-                            return $btn;
-                    })
-                    ->rawColumns(['action'])
-                    ->make(true);
+                ->addIndexColumn()
+                ->addColumn('action', function($row){
+
+                        $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editBook">Edit</a>';
+
+                        $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deleteBook">Delete</a>';
+
+                        return $btn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
         }
-      
-        return view('supervisor.menus.menu_view');
+
+      return view('supervisor.menus.menu_view'/*,compact('menus')*/);
     }
 
     /**
@@ -53,12 +55,12 @@ class MenuController extends Controller
     {
         Menu::updateOrCreate(['id' => $request->menu_id],
                 [
-                    'menu' => $request->menu, 
+                    'menu' => $request->menu,
                     'precio' => $request->precio,
                     'foto' => $request->foto,
                     'cat_id' => $request->cat_id
-                ]);        
-   
+                ]);
+
         return response()->json(['success'=>'Menu saved successfully.']);
     }
 
@@ -81,8 +83,8 @@ class MenuController extends Controller
      */
     public function edit($id)
     {
-        $menu = Menu::find($id);
-        return response()->json($menu);
+        $menus = Menu::find($id);
+        return response()->json($menus);
     }
 
     /**

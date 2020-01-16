@@ -53,21 +53,32 @@
                   <form id="menuForm" name="bookForm" class="form-horizontal">
                    <input type="hidden" name="book_id" id="menu_id">
                     <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Menu</label>
+                        <label for="menu" class="col-sm-2 control-label">Menu</label>
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" id="menu" name="menu" placeholder="Enter Title" value="" maxlength="50" required="">
+                            <input type="text" class="form-control" id="menu" name="menu" placeholder="Enter Menu" value="" maxlength="50" required="">
                         </div>
                     </div>
-
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Details</label>
+                        <label for="precio" class="col-sm-2 control-label">Precio</label>
                         <div class="col-sm-12">
-                            <textarea id="author" name="author" required="" placeholder="Enter Author" class="form-control"></textarea>
+                            <input type="text" class="form-control" id="precio" name="precio" placeholder="Ingrese Precio" value="" maxlength="50" required="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="foto" class="col-sm-2 control-label">Foto</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="foto" name="foto" placeholder="Ingrese foto" value="" maxlength="50" required="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cat_id" class="col-sm-2 control-label">Tipo</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="cat_id" name="cat_id" placeholder="Ingrese tipo" value="" maxlength="50" required="">
                         </div>
                     </div>
 
                     <div class="col-sm-offset-2 col-sm-10">
-                     <button type="submit" class="btn btn-primary" id="saveBtn" value="create">Save changes
+                     <button type="submit" class="btn btn-primary" id="saveBtn" value="create">Guadar Cambios
                      </button>
                     </div>
                 </form>

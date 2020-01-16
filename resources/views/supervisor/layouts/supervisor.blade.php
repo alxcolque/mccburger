@@ -10,6 +10,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Sufee Admin - HTML5 Admin Template</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -255,7 +256,7 @@
         </a>
       </div>
     <!-- Right Panel -->
-
+    <script src="{{ asset('admin/vendors/jquery/jquery-3.3.1.min') }}"></script>
     <script src="{{ asset('admin/vendors/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('admin/vendors/popper.js/dist/umd/popper.min.js') }}"></script>
     <script src="{{ asset('admin/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
@@ -303,12 +304,14 @@
     <script src="{{ asset('js/app.js') }}" type="text/js"></script>
     <!-- Custom scripts for this template -->
     <script type="text/javascript">
-        $(function () {
+        (function($) {
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
           });
+          "use strict";
+
           var table = $('.data-table').DataTable({
               processing: true,
               serverSide: true,
@@ -322,23 +325,25 @@
                   {data: 'action', name: 'action', orderable: false, searchable: false},
               ]
           });
-          jQuery('#createNewBook').click(function () {
+          $('#createNewBook').click(function () {
 
-              alert();/*$('#saveBtn').val("create-book");
+              $('#saveBtn').val("create-book");
               $('#menu_id').val('');
               $('#menuForm').trigger("reset");
-              $('.modal-title').text("Create New Book");
-              $('#ajaxModel').modal('show');*/
+              $('.modal-title').text("Crear Nuevo Menu");
+              $('#ajaxModel').modal('show');
           });
           $('body').on('click', '.editBook', function () {
-            var book_id = $(this).data('id');
-            $.get("{{ route('menus.index') }}" +'/' + book_id +'/edit', function (data) {
-                $('#modelHeading').html("Edit Book");
-                $('#saveBtn').val("edit-book");
+            var menu_id = $(this).data('id');
+            $.get("{{ route('menus.index') }}" +'/' + menu_id +'/edit', function (data) {
+                $('.modal-title').text("Editar Menu");
+                $('#saveBtn').val("Editar Menu");
                 $('#ajaxModel').modal('show');
-                $('#book_id').val(data.id);
-                $('#title').val(data.menu);
-                $('#author').val(data.precio);
+                $('#menu_id').val(data.id);
+                $('#menu').val(data.menu);
+                $('#precio').val(data.precio);
+                $('#foto').val(data.foto);
+                $('#cat_id').val(data.cat_id);
             })
          });
           $('#saveBtn').click(function (e) {
@@ -366,12 +371,12 @@
 
           $('body').on('click', '.deleteBook', function () {
 
-              var book_id = $(this).data("id");
+              var menu_id = $(this).data("id");
               confirm("Are You sure want to delete !");
 
               $.ajax({
                   type: "DELETE",
-                  url: "{{ route('menus.store') }}"+'/'+book_id,
+                  url: "{{ route('menus.store') }}"+'/'+menu_id,
                   success: function (data) {
                       table.draw();
                   },
@@ -380,8 +385,7 @@
                   }
               });
           });
-
-        });
+      })(jQuery);
       </script>
 </body>
 
