@@ -299,10 +299,13 @@
                   <i class="fas fa-times fa-fw"></i>
                   Cancelar
                 </button>
+                <form action="{{route('detalleventas.store')}}" method="POST" class="tcolor" style="padding: 0px 50px 0px 50px">
+                @csrf 
                 <button class="btn btn-primary" data-dismiss="modal">
                   <i class="fas fa-plus"></i>
                   Pedir
                 </button>
+                </form>
               </div>
             </div>
           </div>

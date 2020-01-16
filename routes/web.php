@@ -55,3 +55,7 @@ Route::resource('usersrol','UsersRolController');
 //cajero
 Route::resource('ventas','VentasController');
 Route::resource('tiendas','TiendasController');
+Route::resource('detalleventas','DetalleVentasController');
+//Elaborador Tareas
+Route::resource('elaboradortareas', 'ElaboradorTareasController');
+//Route::get('elaboradortareas/finalizados', 'ElaboradorTareasController@index2');

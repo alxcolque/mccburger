@@ -45,20 +45,53 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="{{route('elaborador')}}"><img src="admin/images/logo.png" alt="Logo"></a>
-                <a class="navbar-brand hidden" href="{{route('elaborador')}}"><img src="admin/images/logo2.png" alt="Logo"></a>
+                <a class="navbar-brand" href="{{route('supervisor')}}"><img src="admin/images/logo.png" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="{{route('supervisor')}}"><img src="admin/images/logo2.png" alt="Logo"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="{{route('elaborador')}}"> <i class="menu-icon fa fa-dashboard"></i>Principal </a>
+                        <a href="{{route('supervisor')}}"> <i class="menu-icon fa fa-dashboard"></i>Principal </a>
                     </li>
                     <h3 class="menu-title">Elementos</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Ordenes</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Insumos</a>
                         <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-folder"></i><a href="{{route('elaboradortareas.index')}}">Listar Ordenes</a></li>
+                        <li><i class="menu-icon fa fa-folder"></i><a href="{{route('elaboradortareas.index')}}">Categorias</a></li>
+                        <li><i class="menu-icon fa fa-gear"></i><a href="{{route('insumos.index')}}">Listar Insumos</a></li>
+                        <li><i class="menu-icon fa fa-folder-open"></i><a href="{{route('insumos_stocks.index')}}">Stock Insumos</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{{route('tiendas.index')}}"> <i class="menu-icon fa fa-money"></i>Tiendas </a>
+                    </li>
+                    <li>
+                        <a href="{{'posts'}}"> <i class="menu-icon fa fa-file-text"></i>Blogs </a>
+                    </li>
+                    <li>
+                        <a href="#"> <i class="menu-icon fa fa-table"></i>Contactos </a>
+                    </li>
+                    <h3 class="menu-title">Menus</h3><!-- /.menu-title -->
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list-ul"></i>Menu</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-plus-square-o"></i><a href="{{'catmenus'}}">Tipo</a></li>
+                            <li><i class="menu-icon fa fa-check-square"></i><a href="{{route('menus.index')}}">Menu Burger</a></li>
+                        </ul>
+                    </li>
+
+                    <h3 class="menu-title">Recursos Humanos</h3><!-- /.menu-title -->
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Personal</a>
+                        <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa fa-user"></i><a href="{{route('usersrol.index')}}">Listado del Personal</a></li>
+                            <!--<li><i class="menu-icon fa fa-user"></i><a href="font-themify.html">Meseros</a></li>
+                            <li><i class="menu-icon fa fa-user"></i><a href="font-fontawesome.html">Cajeros</a></li>
+                            <li><i class="menu-icon fa fa-user"></i><a href="font-themify.html">Recepción</a></li>
+                            <li><i class="menu-icon fa fa-user"></i><a href="font-fontawesome.html">Elaborador</a></li>-->
                         </ul>
                     </li>
 

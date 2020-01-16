@@ -78,7 +78,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-list-ul"></i>Menu</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-plus-square-o"></i><a href="{{'catmenus'}}">Tipo</a></li>
-                            <li><i class="menu-icon fa fa-check-square"></i><a href="{{'menus'}}">Menu Burger</a></li>
+                            <li><i class="menu-icon fa fa-check-square"></i><a href="{{route('menus.index')}}">Menu Burger</a></li>
                         </ul>
                     </li>
 

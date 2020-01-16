@@ -17,34 +17,31 @@
           </button>
       </div>
   </div>
-
-  <div class="col-xl-12 col-lg-4 col-md-6 col-sm-12 col-12">
-    <a href="{{route('catmenus.store')}}" type="button" class="btn btn-primary btn-sm"><i class="fa fa-arrow-left"></i>&nbsp; Categoria Menu</a>
-    <div class="card">
-    <h5 class="card-header" id="tit_part">Categoria Menu</h5>
-      <div class="row">
-       <div class="card-body" id="sec_crea">
-               @if ($errors->any())
-          <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                  <li>{{ $error }}</li>
+  <div class="d-flex flex-column mb-5 p-1 align-items-center">
+    <form action="{{route('menus.store')}}" method="POST" class="tcolor" style="padding: 0px 50px 0px 50px">
+    @csrf    
+    <p class="text-center">Registrar Menus</p><br>
+        <div class="form-group formuswidth">
+        <input type="text" class="form-control" name="menu" placeholder="Menu">
+        {!!$errors->first('menu')!!}
+        </div>
+        <div class="form-group formuswidth">
+            <input type="text" class="form-control" name="precio" placeholder="Precio">
+        {!!$errors->first('precio')!!}
+        </div>
+        <div>
+            <select name="cat_id" class="form-control text-center mt-3">
+                <option hidden value="">Seleccione Categoria</option>
+                @foreach ($CategMen as $Categ)
+                <option value="{{$Categ->id}}">{{$Categ->categoria}}</option>    
                 @endforeach
-            </ul>
-          </div><br />
-        @endif
-          <form method="post" action="{{ route('catmenus.store') }}">
-              <div class="form-group">
-                  @csrf
-                  <label for="categoria">Categoria:</label>
-                  <input type="text" class="form-control" name="categoria"/>
-              </div>
-
-              <button type="submit" class="btn btn-success">Guardar</button>
-          </form>
-       </div>
-      </div>
-    </div>
-  </div>
+            </select>
+            {!!$errors->first('cat_id')!!}
+        </div>
+        <div class="btn-block formuswidth">
+            <button type="submit" class="flex-row btn btn-primary btn-block btn-flat mt-3">Registrar</button>
+        </div><br>
+    </form>
+</div>
 </div>
 @endsection

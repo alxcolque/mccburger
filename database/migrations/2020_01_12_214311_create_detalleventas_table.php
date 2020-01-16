@@ -14,13 +14,15 @@ class CreateDetalleventasTable extends Migration
     public function up()
     {
         Schema::create('detalleventas', function (Blueprint $table) {
-            $table->timestamps();
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('venta_id');
             $table->unsignedBigInteger('menu_id');
             $table->index(['venta_id', 'menu_id']);
             $table->integer('cantidad');
             $table->dateTime('fecha', 0);
-
+            $table->string('estado', 9)->nullable();
+            $table->timestamps();
+            
             $table->foreign('venta_id')
                 ->references('id')->on('ventas')
                 ->onDelete('cascade');
